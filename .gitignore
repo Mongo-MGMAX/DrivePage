@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+
+# Local backups and build artifacts
+.backup-*/
+*.zip
+*.lnk
+
+# Generated inventory files
+全部型号驱动清单.csv
+全部型号驱动清单.html
+打印机型号统计清单*.xlsx
+
+# Local drivers are intentionally not committed
+drivers/*
+!drivers/放这里-README.md

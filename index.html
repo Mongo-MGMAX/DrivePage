@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light" data-page-node-id="trMUzYL5ZKwbKrqqECy6jC">
+<head data-page-node-id="jF51GtH6U1nJFTzNTsoany">
+<meta charset="UTF-8" data-page-node-id="iYM1CkyLiFouPKkkL03Fu9">
+<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="r9watcKVPAfn0JsjvfsPPZ">
+<title>DrivePage · Printer Driver Search</title>
+<link rel="icon" href="assets/app.ico" data-page-node-id="DGdXnFd1REtLIe2LLMqbwG">
+<link rel="preconnect" href="https://fonts.googleapis.com" data-page-node-id="lllJlUPFat6dSbWYUoNgy1">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin data-page-node-id="nrPJUoBHAwusf3lMe0tJvB">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" data-page-node-id="Njs4ulJfORq8uU9BHXYNgn">
+<link rel="stylesheet" href="assets/styles.css" data-page-node-id="PNUQbMLqGtd6alLZqDebUV">
+</head>
+<body data-page-node-id="ZT5xSaHmsOtHIVNWbInLz0">
+
+<!-- ══════════ 顶栏 ══════════ -->
+<header class="topbar" data-page-node-id="9wYmZD1dCxgqeQs6yLzIAa">
+  <div class="wrap topbar-inner" data-page-node-id="nAQzT3m105MPjBZj9b6t6e">
+    <a class="logo" href="#" aria-label="DrivePage" data-page-node-id="FfDJKMSonsuxTuikNnEkDh">
+      <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true" data-page-node-id="C3uvTW1X4dWfhOrYl13LhK">
+        <rect x="1.5" y="1.5" width="29" height="29" rx="8" data-page-node-id="TrGzBXIaRZd0unjmE7L7Pm"/>
+        <path d="M9 11.5h14v4H9z" class="lm-a" data-page-node-id="6pzeshKsWvqANmRJYd6snr"/>
+        <path d="M11.5 9.5h9v2h-9z" class="lm-b" data-page-node-id="qyxC5D6xz0F0bVLbG5RVtH"/>
+        <path d="M11 18h10v5.5H11z" class="lm-c" data-page-node-id="4NA27JBvPNAEp5pGpntwsi"/>
+      </svg>
+      <span class="logo-text" data-page-node-id="etalRbKmAteMGDDvIUm7cd">DrivePage<em data-page-node-id="2FryXzk1VapVbNT20vj1LB">Printer Driver Search</em></span>
+    </a>
+
+    <div class="topbar-actions" data-page-node-id="5G6uOhMq1GSIs7VqozGvfK">
+      <button class="btn btn-ghost" id="btnLibrary" title="本地驱动库（导入 / 索引安装包）" data-page-node-id="WmMgxrc45Zm9O0fBn6USle">
+        <svg viewBox="0 0 24 24" class="ic" data-page-node-id="g6ieDZTq5qny5j7PEHwxmB"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" data-page-node-id="BBzV3d1kYX6FBU5KsNRtAs"/></svg>
+        <span data-page-node-id="UScVDwaKpkafw4gQnptHTu">驱动库</span>
+        <span class="pill" id="libCount" data-page-node-id="cSF9Da7oKIFzxqVe0N4xBl">0</span>
+      </button>
+      <button class="btn btn-ghost btn-icon" id="btnReload" title="重新加载（Ctrl+R）" data-page-node-id="3hLNeenhz46iQpxgNtskmq">
+        <svg viewBox="0 0 24 24" class="ic" data-page-node-id="NAs0XP1MBFlKyEDxgMznAG"><path d="M20 11a8 8 0 1 0-2.3 5.7" data-page-node-id="gZoVwp5bC178XYZH4akrXc"/><path d="M20 5v6h-6" data-page-node-id="6Kxj4Y5R5yFFQiwnLsfukC"/></svg>
+      </button>
+      <button class="btn btn-ghost btn-icon" id="btnTheme" title="切换明暗" data-page-node-id="E8lCoT6Er0PfuyZCKBGncm">
+        <svg viewBox="0 0 24 24" class="ic ic-sun" data-page-node-id="VVAAyLGQ8kBrJbA358gxmk"><circle cx="12" cy="12" r="4" data-page-node-id="PmHRoax7Er6AcRKdfaccGD"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" data-page-node-id="RMK4aym7AAPEWuL83yRydU"/></svg>
+        <svg viewBox="0 0 24 24" class="ic ic-moon" data-page-node-id="cwSy3CuQCCI1qR9HT7Dan2"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" data-page-node-id="AJhkv430Y1tNRZPi1DLRnv"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- sentinel：观察它是否离开视口，决定 hero 是否切 compact（消除滚动边界抖动） -->
+<div class="hero-sentinel" id="heroSentinel" aria-hidden="true" data-page-node-id="1pPVQYPKCsddWHK8LUH8dT"></div>
+
+<!-- ══════════ 搜索主区 ══════════ -->
+<section class="hero" id="hero" data-page-node-id="PxXGZQxQwWh6CAFaOChu8P">
+  <div class="wrap" data-page-node-id="z7kmv1I4oWHwpUsw2Ar2yy">
+    <div class="hero-copy" data-page-node-id="QnDKXD2BlMzI73NgXxj5ja">
+      <p class="eyebrow" data-page-node-id="F2Pwj3x1F3XavupMdIJb5r">2000 — 2025 · 消费级 / 商用级 / 企业级</p>
+      <h1 class="hero-title" data-page-node-id="OEEraJOs13YQsjFzm83ndr">搜型号，直接拿驱动</h1>
+    </div>
+
+    <div class="searchbox" id="searchbox" data-page-node-id="Fq1ag8malExxE4mCPfOuol">
+      <svg viewBox="0 0 24 24" class="ic search-ic" data-page-node-id="6nECPhz9vYqRPprGmcUsmC"><circle cx="11" cy="11" r="7" data-page-node-id="rWqs4gAsFlBotOUkfurMnr"/><path d="m20 20-3.5-3.5" data-page-node-id="wCY9Xg0VuSlZyAaLrBdNxI"/></svg>
+      <input id="q" type="search" autocomplete="off" spellcheck="false"
+             placeholder="输入型号，如 1020、L3251、惠普 激光 …"
+             aria-label="搜索打印机型号" data-page-node-id="VGXfdzbI8k95J0zAcWeg8D">
+      <kbd class="kbd" data-page-node-id="WUhQGkojCXlULQPPu5Txvk">/</kbd>
+      <button class="clear-btn" id="clearQ" aria-label="清空" hidden data-page-node-id="7mW7XyF3NDyEFpGykRAILg">
+        <svg viewBox="0 0 24 24" class="ic" data-page-node-id="GZOwUqT7LA34pZIKFiC765"><path d="M6 6l12 12M18 6L6 18" data-page-node-id="rL6ESYXayGCnQVbsLEHfDF"/></svg>
+      </button>
+    </div>
+
+    <div class="hero-meta" data-page-node-id="SEoka1wzuoT6FVILaFJoDt">
+      <div class="quick" id="quickChips" data-page-node-id="LH2lM5d1Exwx6Udkduoo8r"></div>
+      <div class="statline" data-page-node-id="qBEHheZU0W1jQAj9KxsnH6">
+        <span class="stat-pill" data-page-node-id="xuu8Bmk7aQk6yoISA4sXoT"><b id="statModels" data-page-node-id="SLkf6EcmJtDE7dfeFkG69B">—</b> 款机型</span>
+        <span class="stat-pill" data-page-node-id="8AFFBY8xPeRprIdT9D5kL6"><b id="statBrands" data-page-node-id="52NHVJwUKXLY1GliOosR1U">—</b> 品牌</span>
+        <span class="stat-pill ok" data-page-node-id="oTBM9V6kWfugkIPecSq4HH"><b id="statLocal" data-page-node-id="l66e5Uwq4ianTiK6UF12nG">—</b> 本地驱动</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 主体 ══════════ -->
+<main class="wrap layout" data-page-node-id="5Ja8BjJVXPEl1Bn7ZCToM6">
+
+  <aside class="rail" id="rail" aria-label="筛选" data-page-node-id="ltiAn2gYgXX9OhAzfBDHej">
+    <div class="rail-head" data-page-node-id="J9wUWadE5pclMKH3mMdUNC">
+      <span data-page-node-id="mMGQ1zt16BklxGQqEHbHyh">筛选</span>
+      <button class="link-btn" id="resetFilters" hidden data-page-node-id="IHcqQWfOLpvzFb4uy5MXMF">重置</button>
+    </div>
+
+    <div class="fgroup" data-page-node-id="ulIeLNmiFjTsUVE4CkJyYJ">
+      <h3 class="fgroup-title" data-page-node-id="vpIAkfke4saJWVJ7zlopJ3">品牌</h3>
+      <div class="brandlist" id="brandList" data-page-node-id="BqUt0IxJri5iAkQsUfAkbd"></div>
+    </div>
+
+    <div class="fgroup" data-page-node-id="nUvy1pEAFQsCRpTpPpZle9">
+      <h3 class="fgroup-title" data-page-node-id="CyO9cSZhnMbrB6I5ul8t8q">类型</h3>
+      <div class="chipset" id="typeList" data-page-node-id="l6rHhXjhNxciECQAiDzqJl"></div>
+    </div>
+
+    <div class="fgroup" data-page-node-id="2Kv9WIPTekP3YqSADQj4rW">
+      <h3 class="fgroup-title" data-page-node-id="OXrEYtOPngm3Hz7Z2fhKY4">色彩</h3>
+      <div class="chipset" id="colorList" data-page-node-id="1mFlakBeLQoJxFlSEOCKwO"></div>
+    </div>
+
+    <div class="fgroup" data-page-node-id="FFD9bD0weBdOBuxtA6v7Cv">
+      <h3 class="fgroup-title" data-page-node-id="D9RtUsymfOUD5BRaV9DxOa">功能</h3>
+      <div class="chipset" id="funcList" data-page-node-id="czIQC5gfYhZ4yF4f76BlJA"></div>
+    </div>
+
+    <div class="fgroup" data-page-node-id="VQcaL0Y3OBKJFxYLGJHRnd">
+      <h3 class="fgroup-title" data-page-node-id="xbQL7i6S2WBp9OdJKEove0">定位</h3>
+      <div class="chipset" id="levelList" data-page-node-id="7uthTOb3HCjYhqW0zA1IXd"></div>
+    </div>
+
+    <div class="fgroup" data-page-node-id="dzD6RUBanH7hmdeScMcWnS">
+      <h3 class="fgroup-title" data-page-node-id="EMR65jLBj9ibOACXpeIPQb">年份</h3>
+      <div class="chipset" id="eraList" data-page-node-id="54gc2fSRRomnmagCiKbkbD"></div>
+    </div>
+
+    <div class="fgroup" data-page-node-id="O0QiJ3NWGrBQg4CRkl4RZi">
+      <h3 class="fgroup-title" data-page-node-id="Ku6eu3tHKsMJSkGNtD4FPl">直达方式</h3>
+      <div class="chipset" id="directList" data-page-node-id="vgufxJzEjAFkHhGxHM0Iqf"></div>
+    </div>
+
+    <label class="switchrow" data-page-node-id="BJ1kTuEbDyuybfWeP1TYhO">
+      <input type="checkbox" id="onlyLocal" data-page-node-id="Vo3r3JnyBrBdblaKHUHaz5">
+      <span class="switch" aria-hidden="true" data-page-node-id="xYDXi0kGrDUjHLLCgJLMWq"></span>
+      <span class="switchlabel" data-page-node-id="XXlPaUFNJefES5EX0f3rhO">只看已入库驱动</span>
+    </label>
+  </aside>
+
+  <section class="results" data-page-node-id="c9szqQMZ9TnRkRKgNGTa9B">
+    <div class="resultbar" data-page-node-id="HJFEAE5EtxjLyCuFWLNBzD">
+      <p class="resultcount" id="resultCount" data-page-node-id="szLvAGk4JqWBtgdcwYJtb7">—</p>
+      <div class="resultbar-actions" data-page-node-id="htZqwwjpJTco3WNw0c2Ag6">
+        <label class="selectwrap" data-page-node-id="6eBeUcrpPGefePSc4gj28i">
+          <select id="sortBy" aria-label="排序" data-page-node-id="erDGVlAGu8PujrbP5SkWe5">
+            <option value="relevance" data-page-node-id="1RIKw3uRBGfGABj06Zbs8D">相关度</option>
+            <option value="year-desc" data-page-node-id="kKLvo6Rffxw1MPa9J5P4MM">年份 · 新→旧</option>
+            <option value="year-asc" data-page-node-id="UWProZMIBCaLon1eOD1ePe">年份 · 旧→新</option>
+            <option value="brand" data-page-node-id="400KH2Umc2m8jBY6cNzGSK">品牌 A→Z</option>
+            <option value="model" data-page-node-id="suz3JEDXjZAMX2Bn6IJ4jf">型号 A→Z</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="grid" id="grid" data-page-node-id="Ce8Zv5z7tCFUyr7gI0LqXK"></div>
+    <div class="empty" id="empty" hidden data-page-node-id="zrQhiTZTo5x4QYYQi8XaCX"></div>
+    <div class="loadmore" id="loadMore" hidden data-page-node-id="4koievC4gsTR5feV2gAfSl"><button class="btn btn-soft" id="btnMore" data-page-node-id="LkV8SnnQzhIhpEZx0RzzAE">加载更多</button></div>
+  </section>
+</main>
+
+<footer class="foot" data-page-node-id="CBGHkhbqdF4ImlmIBgqEyN">
+  <div class="wrap foot-inner" data-page-node-id="hhaGC5fAM3jPWA66QRhrOD">
+    <p data-page-node-id="OE8Iuhx1bFuoTteaZThcJp">DrivePage · 本地离线检索工具。年份为上市/主流在售年份，用于区间筛选，非精确发布日。</p>
+    <p class="foot-dim" data-page-node-id="oGWeOWNYWJuhdDWiXHcU6b">厂商官方链接可能随站点改版失效；本地驱动需自行放入 <code data-page-node-id="MQwecBEtMrQAV6Nwm0KVXj">drivers</code> 目录。</p>
+  </div>
+</footer>
+
+<!-- ══════════ 驱动库面板 ══════════ -->
+<div class="scrim" id="libScrim" hidden data-page-node-id="iOTdLR8iUbmnB3zH09yrwM"></div>
+<aside class="drawer drawer-lib" id="libDrawer" hidden aria-label="本地驱动库" data-page-node-id="fOaSWpmChPazv91XdribkU">
+  <div class="drawer-head" data-page-node-id="yWnhpCzkCx8bg6Uio2Pigh">
+    <div data-page-node-id="1UZq2sNpmEhuCIZLpzHk77">
+      <h2 data-page-node-id="jHfGNuNuxFrUXvUzM9mdwU">本地驱动库</h2>
+      <p class="drawer-sub" data-page-node-id="b4YOKgWUPGIfQPhe9BiUmP">把官方安装包放进 <code data-page-node-id="aX86qUwiHe84fSDLqcSsSI">drivers</code> 文件夹，索引后即可一键直接下载。</p>
+    </div>
+    <button class="icon-btn" data-close-lib aria-label="关闭" title="关闭（Esc）" data-page-node-id="WxvdjfHt8RjoGMHlxULfcD">
+      <svg viewBox="0 0 24 24" class="ic" data-page-node-id="F1pq2t6aqaswxvxqLWGOnB"><path d="M6 6l12 12M18 6L6 18" data-page-node-id="hO1oiWlEfsrgXkJ3z4VbTS"/></svg>
+    </button>
+  </div>
+  <div class="drawer-body" data-page-node-id="yc9TKMzy0a7EVxr9ytJYwD">
+    <div class="dropzone" id="dropzone" data-page-node-id="EkiGB1B8RcvQZSsIJIRAtr">
+      <svg viewBox="0 0 24 24" class="ic dz-ic" data-page-node-id="Hc0i80boEzmteIPiBayPDC"><path d="M12 16V4m0 0L8 8m4-4 4 4" data-page-node-id="jzeL1fAVeE6aSJE0Ijzcae"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" data-page-node-id="ma0F636KQYxs5UPVn441k2"/></svg>
+      <p class="dz-title" data-page-node-id="Hgdf4C0yQIRrHrb5lRJ9FR">选择驱动所在文件夹</p>
+      <p class="dz-sub" data-page-node-id="8EzTNbWm8gz35liW9HTgU4">支持 exe / zip / rar / 7z / msi，按文件名自动匹配机型</p>
+      <button class="btn btn-solid" id="btnPickDir" data-page-node-id="5OQ78BwrwflnIiMENX28pO">选择文件夹</button>
+    </div>
+    <div class="lib-summary" id="libSummary" data-page-node-id="qoNDZx0EuhtNl4W4hdVqvU"></div>
+    <div class="lib-list" id="libList" data-page-node-id="1LDSz95g8blhEyFzf0BgFq"></div>
+  </div>
+  <div class="drawer-foot" data-page-node-id="mMicajiH8LcoOlICoSt6UC">
+    <button class="link-btn" id="btnExportList" title="导出全部机型的官方驱动页清单（CSV）" data-page-node-id="UTf5SESbDeSZo54b1JT4Pu">导出全部型号清单</button>
+    <button class="link-btn" data-close-lib data-page-node-id="6clTbhh46cf0dimCMzuBTi">关闭面板</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast" hidden data-page-node-id="5AMgoyRvPjPKxUsx8neAKe"></div>
+
+<input type="file" id="dirInput" webkitdirectory directory multiple hidden data-page-node-id="xKWK5HenlQaYeEeJP7Hjbn">
+
+<script src="assets/data.js"></script>
+<script src="assets/local-drivers.js" onerror="void 0"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
